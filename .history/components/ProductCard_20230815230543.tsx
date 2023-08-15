@@ -35,36 +35,10 @@
    const toggleDetails = () => {
      setShowDetails(!showDetails);
    };
-//    const [cartItems, setCartItems] = useState<number[]>([]);
-    const [cartItems, setCartItems] = useState<{ id: string; title: string; price: number }[]>([]);
-
+ 
    const handleAddToCart = () => {
-    const newItem = {
-      id: `${id}-${Date.now()}`,
-      title: title,
-      price: price,
-    };
-    console.log(newItem);
-    // setCartItems(cartItems.push(newItem));
-    setCartItems([...cartItems, newItem]);
-    setShowPopup(true);
-    console.log(typeof(cartItems));
-  };
-
-// const handleAddToCart = () => {
-//     const newItem = {
-//       id: id,
-//       title: title,
-//       price: price,
-//     };
-//     setCartItems([...cartItems, newItem]);
-//     setShowPopup(true);
-//     sessionStorage.setItem('cartItems', JSON.stringify([...cartItems, newItem]));
-//     window.location.href = 'newPage.html';
-//   };
-  
-  
-  
+     setShowPopup(true);
+   };
  
    return (
      <div>
@@ -93,21 +67,9 @@
            </button>
          </div>
        )}
-       {/* <Popup open={showPopup} onClose={() => setShowPopup(false)}>
-         <div className='m-2 font-sans text-xl' style={{ textAlign: 'center' }}>Product added to cart 🎉🎊</div>
-       </Popup> */}
-
-<Popup open={showPopup} onClose={() => setShowPopup(false)}>
-  <div className='m-2 font-sans text-xl' style={{ textAlign: 'center' }}>
-    Product added to cart 🎉🎊
-  </div>
-  <ul>
-    {cartItems.map((item, index) => (
-      <li key={index}>{item.title}</li>
-    ))}
-  </ul>
-</Popup>
-
+       <Popup open={showPopup} onClose={() => setShowPopup(false)}>
+         <div className='m-4 font-sans text-lg'>Product added to cart 🎉🎊</div>
+       </Popup>
      </div>
    );
  };

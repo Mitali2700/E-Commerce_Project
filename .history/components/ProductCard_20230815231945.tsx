@@ -35,21 +35,17 @@
    const toggleDetails = () => {
      setShowDetails(!showDetails);
    };
-//    const [cartItems, setCartItems] = useState<number[]>([]);
-    const [cartItems, setCartItems] = useState<{ id: string; title: string; price: number }[]>([]);
+   const [cartItems, setCartItems] = useState([]);
 
-   const handleAddToCart = () => {
-    const newItem = {
-      id: `${id}-${Date.now()}`,
-      title: title,
-      price: price,
-    };
-    console.log(newItem);
-    // setCartItems(cartItems.push(newItem));
-    setCartItems([...cartItems, newItem]);
-    setShowPopup(true);
-    console.log(typeof(cartItems));
-  };
+//    const handleAddToCart = () => {
+//     const newItem = {
+//       id: id,
+//       title: title,
+//       price: price,
+//     };
+//     setCartItems([...cartItems, newItem]);
+//     setShowPopup(true);
+//   };
 
 // const handleAddToCart = () => {
 //     const newItem = {

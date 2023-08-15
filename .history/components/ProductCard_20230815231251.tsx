@@ -35,23 +35,9 @@
    const toggleDetails = () => {
      setShowDetails(!showDetails);
    };
-//    const [cartItems, setCartItems] = useState<number[]>([]);
-    const [cartItems, setCartItems] = useState<{ id: string; title: string; price: number }[]>([]);
+   const [cartItems, setCartItems] = useState([]);
 
-   const handleAddToCart = () => {
-    const newItem = {
-      id: `${id}-${Date.now()}`,
-      title: title,
-      price: price,
-    };
-    console.log(newItem);
-    // setCartItems(cartItems.push(newItem));
-    setCartItems([...cartItems, newItem]);
-    setShowPopup(true);
-    console.log(typeof(cartItems));
-  };
-
-// const handleAddToCart = () => {
+//    const handleAddToCart = () => {
 //     const newItem = {
 //       id: id,
 //       title: title,
@@ -59,10 +45,20 @@
 //     };
 //     setCartItems([...cartItems, newItem]);
 //     setShowPopup(true);
-//     sessionStorage.setItem('cartItems', JSON.stringify([...cartItems, newItem]));
-//     window.location.href = 'newPage.html';
 //   };
-  
+
+const handleAddToCart = () => {
+    const newItem = {
+      id: id,
+      title: title,
+      price: price,
+    };
+    setCartItems([...cartItems, newItem]);
+    setShowPopup(true);
+    const queryParams = new URLSearchParams();
+    queryParams.append('cartItems', JSON.stringify([...cartItems, newItem]));
+    window.location.href = `newPage.html?${queryParams.toString()}`;
+  };
   
   
  

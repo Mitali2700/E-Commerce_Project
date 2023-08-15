@@ -35,20 +35,16 @@
    const toggleDetails = () => {
      setShowDetails(!showDetails);
    };
-//    const [cartItems, setCartItems] = useState<number[]>([]);
-    const [cartItems, setCartItems] = useState<{ id: string; title: string; price: number }[]>([]);
+   const [cartItems, setCartItems] = useState([]);
 
    const handleAddToCart = () => {
     const newItem = {
-      id: `${id}-${Date.now()}`,
+      id: id,
       title: title,
       price: price,
     };
-    console.log(newItem);
-    // setCartItems(cartItems.push(newItem));
     setCartItems([...cartItems, newItem]);
     setShowPopup(true);
-    console.log(typeof(cartItems));
   };
 
 // const handleAddToCart = () => {
@@ -93,10 +89,10 @@
            </button>
          </div>
        )}
-       {/* <Popup open={showPopup} onClose={() => setShowPopup(false)}>
+       <Popup open={showPopup} onClose={() => setShowPopup(false)}>
          <div className='m-2 font-sans text-xl' style={{ textAlign: 'center' }}>Product added to cart 🎉🎊</div>
-       </Popup> */}
-
+       </Popup>
+{/* 
 <Popup open={showPopup} onClose={() => setShowPopup(false)}>
   <div className='m-2 font-sans text-xl' style={{ textAlign: 'center' }}>
     Product added to cart 🎉🎊
@@ -106,7 +102,7 @@
       <li key={index}>{item.title}</li>
     ))}
   </ul>
-</Popup>
+</Popup> */}
 
      </div>
    );

@@ -15,4 +15,5 @@ export {
     CustomFilters,
     SearcManufacturer,
     ProductCard,
+    
 }
