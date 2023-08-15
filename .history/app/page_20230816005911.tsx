@@ -10,7 +10,9 @@ export default async function Home() {
 
   const isDataEmpty = !Array.isArray(allProduct) || allProduct.length < 1 || !allProduct;
   console.log(Array.isArray(allProduct));
+  console.log("PRODUCTS")
   console.log(typeof(allProduct))
+  console.log("ok")
   console.log(allProduct.length);
   console.log(allProduct);
   
