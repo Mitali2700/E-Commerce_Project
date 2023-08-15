@@ -34,7 +34,7 @@ export default async function Home() {
              <h4 className='mt-8'>We Have Different Category of Products...</h4>
             <div className="home__cars-wrapper">
 
-              {allProduct?.map((products: any) => (
+              {allProduct?.map((any: products) => (
                 <ProductCard title={products.title} id={products.id} description={products.description} price={products.price} thumbnail={products.thumbnail} discountPercentage={products.discountPercentage} rating={products.rating} stock={products.stock} brand={products.brand} category={products.category} />
               ))}
              
